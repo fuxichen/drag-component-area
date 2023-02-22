@@ -66,7 +66,8 @@ export class DragComponentArea {
     } while (!result)
 
     this.mapList = [...mapList]
-    this.componentList.push(item)
+    this.componentList.push(item);
+    return item
   }
 
   /**
