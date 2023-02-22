@@ -29,7 +29,7 @@ export class DragComponentArea {
   /**
    * 添加组件
    */
-  addComponentList(config) {
+  addComponentList(config={}) {
     const { mapList } = this;
     const item = new DragComponentItem(
       {
