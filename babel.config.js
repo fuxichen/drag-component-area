@@ -5,7 +5,7 @@ module.exports = {
       {
         modules: false,
         useBuiltIns: 'usage',
-        corejs: { version: 3.8, proposal: true },
+        corejs: { version: 3, proposal: true },
       }
     ]
   ],
@@ -18,11 +18,12 @@ module.exports = {
       '@babel/plugin-transform-runtime',
       {
         absoluteRuntime: false,
-        corejs: { version: 3, proposal: true },
+        // corejs: { version: 3, proposal: true },
+        corejs: false,
         helpers: true,
-        regenerator: true,
+        regenerator: false,
         useESModules: false,
-        version: '7.20.0',
+        version: '7.21.0',
       },
     ],
     ['@babel/plugin-proposal-decorators', { legacy: true }],

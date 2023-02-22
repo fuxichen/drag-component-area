@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0",
+    "@babel/runtime-corejs3": "^7.21.0",
     "core-js": "^3.28.0",
     "lodash-es": "^4.17.21",
     "nanoid": "^4.0.1",
@@ -37,7 +38,6 @@
     "@babel/plugin-transform-runtime": "^7.21.0",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.0.0",
-    "@babel/runtime-corejs3": "^7.21.0",
     "babel-loader": "^8.0.0",
     "cross-env": "^5.0.5",
     "css-loader": "^6.7.3",

@@ -132,7 +132,7 @@ module.exports = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = 'source-map';
+  module.exports.devtool = false;
   let externals = module.exports.externals || {}
   externals.vue = {
     root: 'Vue',

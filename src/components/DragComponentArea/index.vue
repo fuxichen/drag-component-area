@@ -52,18 +52,16 @@ export default {
   mounted() {
     const dom = this.$refs.container
     const domStyle = window.getComputedStyle(dom)
-    this.maxWidth = parseFloat(domStyle.width)
+    this.maxWidth = parseFloat(domStyle.width);
     this.colWidth = this.maxWidth / maxCol
     this.rowHeight = 60
     this.dragComponentArea = new DragComponentArea(
       this.colWidth,
       this.rowHeight,
       maxCol,
-      maxCol,
+      6,
       this.margin
     )
-    this.dragComponentArea.addComponentList()
-    this.dragComponentArea.addComponentList()
   },
   methods: {
     /**
