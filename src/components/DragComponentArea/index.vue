@@ -41,7 +41,13 @@ export default {
   components: { DragComponentItem },
   data() {
     return {
+      /**
+       * @type {DragComponentArea}
+       */
       dragComponentArea: null,
+      /**
+       * @type {DragComponentArea}
+       */
       dragComponentAreaBack: null,
       colWidth: 0,
       rowHeight: 0,
