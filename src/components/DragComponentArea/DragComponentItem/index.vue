@@ -3,19 +3,21 @@
     class="drag-component-area__item"
     :style="{
       ...item.getStyle(),
+      cursor: disableMoveResize? 'pointer' : ''
     }"
     @mousedown="(event) => $emit('moveStart', event, item)"
   >
     <slot />
-
-    <div class="resize-handler left top"></div>
-    <div class="resize-handler right top"></div>
-    <div class="resize-handler right bottom"></div>
-    <div class="resize-handler left bottom"></div>
-    <div
-      class="resizable"
-      @mousedown.stop="(event) => $emit('resizeStart', event, item)"
-    />
+    <template v-if="!disableMoveResize">
+      <div class="resize-handler left top"></div>
+      <div class="resize-handler right top"></div>
+      <div class="resize-handler right bottom"></div>
+      <div class="resize-handler left bottom"></div>
+      <div
+        class="resizable"
+        @mousedown.stop="(event) => $emit('resizeStart', event, item)"
+      />
+    </template>
   </div>
 </template>
 
@@ -28,6 +30,10 @@ export default {
     item: {
       type: DragComponentItem,
       default: () => null
+    },
+    disableMoveResize: {
+      type: Boolean,
+      default: ()=> false
     }
   }
 }

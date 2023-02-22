@@ -11,6 +11,7 @@
         :item="item"
         @moveStart="(event, item2)=> touchStart(event, item2, 'move')"
         @resizeStart="(event, item2)=> touchStart(event, item2, 'resize')"
+        :disable-move-resize="disableMoveResize"
       >
         <slot name="item" v-bind="item"></slot>
       </drag-component-item>
@@ -39,6 +40,12 @@ const actionNameObj = {
 export default {
   name: 'DragComponentArea',
   components: { DragComponentItem },
+  props:{
+    disableMoveResize: {
+      type: Boolean,
+      default: ()=> false
+    }
+  },
   data() {
     return {
       /**
@@ -77,6 +84,7 @@ export default {
      * @param {'move'|'resize'} actionName
      */
     touchStart(event, item, actionName) {
+      if(this.disableMoveResize) return
       const actionKeyData = actionNameObj[actionName]
       item[actionKeyData.stateKey] = true
       // 记录原始数据
