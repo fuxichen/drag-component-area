@@ -24,8 +24,6 @@ import DragComponentItem from './DragComponentItem/index.vue'
 import cloneDeep from 'lodash-es/cloneDeep'
 import { DragComponentArea } from '../../utils/dragComponentArea'
 
-const maxCol = 12
-
 const actionNameObj = {
   move: {
     stateKey: 'move',
@@ -44,6 +42,14 @@ export default {
     disableMoveResize: {
       type: Boolean,
       default: ()=> false
+    },
+    maxCol: {
+      type: Number,
+      default: ()=> 12
+    },
+    rowHeight: {
+      type: Number,
+      default: ()=> 60
     }
   },
   data() {
@@ -57,7 +63,6 @@ export default {
        */
       dragComponentAreaBack: null,
       colWidth: 0,
-      rowHeight: 0,
       maxWidth: 0,
       margin: 8
     }
@@ -66,12 +71,11 @@ export default {
     const dom = this.$refs.container
     const domStyle = window.getComputedStyle(dom)
     this.maxWidth = parseFloat(domStyle.width);
-    this.colWidth = this.maxWidth / maxCol
-    this.rowHeight = 60
+    this.colWidth = this.maxWidth / this.maxCol
     this.dragComponentArea = new DragComponentArea(
       this.colWidth,
       this.rowHeight,
-      maxCol,
+      this.maxCol,
       6,
       this.margin
     )

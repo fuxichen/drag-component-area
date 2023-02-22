@@ -29,16 +29,16 @@ export class DragComponentArea {
   /**
    * 添加组件
    */
-  addComponentList() {
-    const { mapList } = this
+  addComponentList(config) {
+    const { mapList } = this;
     const item = new DragComponentItem(
       {
         id: nanoid(),
         title: `test${this.componentList.length + 1}`,
-        x: 0,
-        y: 0,
-        w: 6,
-        h: 5,
+        x: config.x ?? 0,
+        y: config.y ?? 0,
+        w: config.w ?? 6,
+        h: config.h ?? 5,
         move: false,
         resize: false,
         margin: this.margin
