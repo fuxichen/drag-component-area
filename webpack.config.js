@@ -2,7 +2,7 @@ var path = require('path');
 const { DefinePlugin } = require('webpack');
 const NODE_ENV = process.env.NODE_ENV;
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserWebpackPlugin  = require('terser-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -115,8 +115,8 @@ module.exports = {
     usedExports: true,
     minimize: true,
     minimizer: [
-      new UglifyJsPlugin({
-        uglifyOptions: {
+      new TerserWebpackPlugin ({
+        terserOptions: {
           sourceMap: true,
           output: {
             comments: false, //去掉注释

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import DragComponentArea from '../dist/drag-component'
+import DragComponentArea from '../dist/drag-component.umd.js'
 
 Vue.use(DragComponentArea);
 

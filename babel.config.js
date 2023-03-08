@@ -37,5 +37,6 @@ module.exports = {
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-record-and-tuple",
     "@babel/plugin-syntax-jsx"
-  ]
+  ],
+  ignore: ['dist/**/*.umd.js'],
 }
