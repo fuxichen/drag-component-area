@@ -11,12 +11,19 @@ export class DragComponentArea {
   margin
 
   constructor(colWidth, rowHeight, width, height, margin = 8) {
+    this.updateConfig(colWidth, rowHeight, width, margin)
+    this.addHeight(height)
+    this.componentList = []
+  }
+
+  updateConfig(colWidth, rowHeight, width, margin = 8){
     this.colWidth = colWidth
     this.rowHeight = rowHeight
     this.width = width
-    this.addHeight(height)
-    this.componentList = []
     this.margin = margin
+    this.componentList.forEach(v=>{
+      v.updateConfig(colWidth, rowHeight, margin)
+    })
   }
 
   addHeight(height) {
@@ -29,7 +36,7 @@ export class DragComponentArea {
   /**
    * 添加组件
    */
-  addComponentList(config={}) {
+  addComponent(config={}) {
     const { mapList } = this;
     const item = new DragComponentItem(
       {
@@ -68,6 +75,16 @@ export class DragComponentArea {
     this.mapList = [...mapList]
     this.componentList.push(item);
     return item
+  }
+
+  /**
+   * 删除组件
+   */
+  delComponent(id){
+    this.componentList = this.componentList.filter(v=>{
+      this.clearItem(v)
+      return v.id === id
+    })
   }
 
   /**
@@ -177,10 +194,16 @@ export class DragComponentItem {
     this.y = config.y ?? 0
     this.w = config.w ?? 3
     this.h = config.h ?? 3
+    this.updateConfig(colWidth,rowHeight,config.margin)
+  }
+
+  updateConfig(colWidth, rowHeight, margin){
     this.colWidth = colWidth
     this.rowHeight = rowHeight
-    this.margin = config.margin
+    this.margin = margin
+    this.styleData = this.getStyleData()
   }
+
 
   getStyleData() {
     const { colWidth, rowHeight } = this

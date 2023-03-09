@@ -24,7 +24,7 @@ export default {
     if(this.$refs.content){
       console.log(this.$refs.content);
       for(let i=0;i< 10; i++){
-        this.$refs.content.dragComponentArea.addComponentList()
+        this.$refs.content.dragComponentArea.addComponent()
       }
     }
 

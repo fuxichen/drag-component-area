@@ -69,18 +69,35 @@ export default {
   },
   mounted() {
     const dom = this.$refs.container
+    this.handleResize(dom)
+    this.observer = new ResizeObserver(() => {
+      this.handleResize(this.$refs.container)
+    });
+    this.observer.observe(dom, {box: "border-box"});
+  },
+  methods: {
+    /**
+     * 处理面板大小改变
+     * @param {HTMLDivElement} dom
+     */
+    handleResize(dom) {
     const domStyle = window.getComputedStyle(dom)
     this.maxWidth = parseFloat(domStyle.width);
-    this.colWidth = this.maxWidth / this.maxCol
-    this.dragComponentArea = new DragComponentArea(
+      this.colWidth = this.maxWidth / this.maxCol;
+      let {dragComponentArea} = this
+      if (!dragComponentArea) {
+        dragComponentArea = new DragComponentArea(
       this.colWidth,
       this.rowHeight,
       this.maxCol,
       6,
       this.margin
     )
+        this.dragComponentArea = dragComponentArea
+      } else {
+        dragComponentArea.updateConfig(this.colWidth, this.rowHeight, this.maxCol, this.margin)
+      }
   },
-  methods: {
     /**
      * 移动开始
      * @param event
