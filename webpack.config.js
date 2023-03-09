@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: NODE_ENV === 'development' ? '' : '/dist/',
-    filename: 'drag-component.js',
+    filename: 'drag-component.umd.js',
     library: {
       name: 'drag-component',
       type: 'umd2',
