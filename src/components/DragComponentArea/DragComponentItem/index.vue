@@ -3,7 +3,7 @@
     class="drag-component-area__item"
     :style="{
       ...item.getStyle(),
-      cursor: disableMoveResize? 'pointer' : ''
+      cursor: disableMoveResize ? 'pointer' : '',
     }"
     @mousedown="(event) => $emit('moveStart', event, item)"
   >
@@ -22,21 +22,21 @@
 </template>
 
 <script>
-import { DragComponentItem } from '../../../utils/dragComponentArea'
+import { DragComponentItem } from "../../../utils/dragComponentArea";
 
 export default {
-  name: 'DragComponentItem',
+  name: "DragComponentItem",
   props: {
     item: {
       type: DragComponentItem,
-      default: () => null
+      default: () => null,
     },
     disableMoveResize: {
       type: Boolean,
-      default: ()=> false
-    }
-  }
-}
+      default: () => false,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -51,9 +51,9 @@ export default {
   background-color: #ffffff;
   padding: 20px 20px 0;
   border-radius: 4px;
-  &:hover{
+  &:hover {
     box-shadow: 0 0 6px 0 rgba(36, 36, 36, 0.3);
-    .resize-handler{
+    .resize-handler {
       opacity: 1;
     }
   }
@@ -69,7 +69,7 @@ export default {
   z-index: 2147483646;
 }
 
-.resize-handler{
+.resize-handler {
   position: absolute;
   right: -5px;
   bottom: 0;
@@ -78,28 +78,28 @@ export default {
   height: 14px;
   cursor: move;
   opacity: 0;
-  transition: opacity .3s ease;
-  &.bottom{
+  transition: opacity 0.3s ease;
+  &.bottom {
     bottom: 0;
-    &.left{
+    &.left {
       left: 0;
       border-left: 3px solid #7f7583;
       border-bottom: 3px solid #7f7583;
     }
-    &.right{
+    &.right {
       right: 0;
       border-bottom: 3px solid #7f7583;
       border-right: 3px solid #7f7583;
     }
   }
-  &.top{
+  &.top {
     top: 0;
-    &.left{
+    &.left {
       left: 0;
       border-left: 3px solid #7f7583;
       border-top: 3px solid #7f7583;
     }
-    &.right{
+    &.right {
       right: 0;
       border-top: 3px solid #7f7583;
       border-right: 3px solid #7f7583;

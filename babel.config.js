@@ -1,13 +1,13 @@
 module.exports = {
-  "presets": [
+  presets: [
     [
       "@babel/preset-env",
       {
         modules: false,
-        useBuiltIns: 'usage',
+        useBuiltIns: "usage",
         corejs: { version: 3, proposal: true },
-      }
-    ]
+      },
+    ],
   ],
   assumptions: {
     setPublicClassFields: true,
@@ -15,7 +15,7 @@ module.exports = {
   },
   plugins: [
     [
-      '@babel/plugin-transform-runtime',
+      "@babel/plugin-transform-runtime",
       {
         absoluteRuntime: false,
         // corejs: { version: 3, proposal: true },
@@ -23,20 +23,20 @@ module.exports = {
         helpers: true,
         regenerator: false,
         useESModules: false,
-        version: '7.21.0',
+        version: "7.21.0",
       },
     ],
-    ['@babel/plugin-proposal-decorators', { legacy: true }],
-    '@babel/plugin-proposal-function-bind',
-    ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
-    '@babel/plugin-proposal-partial-application',
-    '@babel/plugin-proposal-throw-expressions',
+    ["@babel/plugin-proposal-decorators", { legacy: true }],
+    "@babel/plugin-proposal-function-bind",
+    ["@babel/plugin-proposal-pipeline-operator", { proposal: "minimal" }],
+    "@babel/plugin-proposal-partial-application",
+    "@babel/plugin-proposal-throw-expressions",
     "@babel/plugin-proposal-function-sent",
     "@babel/plugin-proposal-async-do-expressions",
     "@babel/plugin-proposal-do-expressions",
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-record-and-tuple",
-    "@babel/plugin-syntax-jsx"
+    "@babel/plugin-syntax-jsx",
   ],
-  ignore: ['dist/**/*.umd.js'],
-}
+  ignore: ["dist/**/*.umd.js"],
+};
