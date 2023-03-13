@@ -23,13 +23,13 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 ### 安装
 
 ```bash
-npm i drag-component
+npm i drag-component-area
 ```
 
 ### 全局注册
 
 ```javascript
-import DragComponentArea from "drag-component";
+import DragComponentArea from "drag-component-area";
 Vue.use(DragComponentArea);
 ```
 
