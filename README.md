@@ -1,4 +1,4 @@
-# drag-component
+# drag-component-area
 
 ![图片](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c212275dcc0f4eb7a410e8b1081687cd~tplv-k3u1fbpfcp-no-mark:480:480:0:0.awebp?)
 > 一个可移动拖拽的布局组件
