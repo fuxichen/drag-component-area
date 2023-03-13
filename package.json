@@ -1,10 +1,11 @@
 {
-  "name": "drag-component",
-  "description": "A Vue.js project",
+  "name": "drag-component-area",
+  "description": "一个可移动拖拽的布局组件",
   "version": "1.0.0",
   "author": "fuhao <632951357@qq.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "main": "./index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack"
