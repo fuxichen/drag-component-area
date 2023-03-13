@@ -6,6 +6,8 @@
   "license": "MIT",
   "private": false,
   "main": "./index.js",
+  "unpkg": "dist/drag-component.umd.js",
+  "jsdelivr": "dist/drag-component.umd.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack"
