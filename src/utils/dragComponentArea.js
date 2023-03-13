@@ -82,8 +82,9 @@ export class DragComponentArea {
    */
   delComponent(id) {
     this.componentList = this.componentList.filter((v) => {
-      this.clearItem(v);
-      return v.id === id;
+      let state = v.id === id
+      state && this.clearItem(v);
+      return state;
     });
   }
 
