@@ -1,7 +1,7 @@
 .DS_Store
 node_modules/
-dist/
-!dist/drag-component.umd.js
+dist/*
+!dist/drag-component-area.umd.js
 npm-debug.log
 yarn-error.log
 
